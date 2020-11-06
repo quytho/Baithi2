@@ -1,16 +1,20 @@
 package Category;
 
 import android.content.Context;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.baithi.MainActivity;
 import com.example.baithi.R;
 
 import java.util.List;
@@ -19,10 +23,13 @@ import uudai.uudai_adapter;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>{
     private Context mContext;
+
     private List<Category> mListCategory;
     public CategoryAdapter(Context mContext){
         this.mContext = mContext;
+
     }
+
     public void setData(List<Category> list){
         this.mListCategory = list;
         notifyDataSetChanged();
@@ -41,12 +48,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         if(category == null){
             return;
         }
-//        holder.tvNameCategory.setText(category.getNameCategory());
+        holder.tvNameCategory.setText(category.getNameCategory());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false);
-        holder.rcvUudai.setLayoutManager(linearLayoutManager);
+        holder.rcvUuDai.setLayoutManager(linearLayoutManager);
         uudai_adapter uudai_adapter = new uudai_adapter();
         uudai_adapter.setData(category.getUudais());
-        holder.rcvUudai.setAdapter(uudai_adapter);
+        holder.rcvUuDai.setAdapter(uudai_adapter);
 
     }
 
@@ -60,10 +67,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder{
         private TextView tvNameCategory;
-        private RecyclerView rcvUudai;
-
+        private RecyclerView rcvUuDai;
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvNameCategory=itemView.findViewById(R.id.tv_name_category);
+            rcvUuDai=itemView.findViewById(R.id.rcv_uudai);
         }
+
     }
 }

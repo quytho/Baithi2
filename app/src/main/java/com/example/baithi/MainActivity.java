@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rcvCategory;
     private CategoryAdapter categoryAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         rcvCategory = findViewById(R.id.rcv_category);
-        categoryAdapter = new CategoryAdapter(this);
+        categoryAdapter = new CategoryAdapter(this );
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcvCategory.setLayoutManager(linearLayoutManager);
         categoryAdapter.setData(getListCategory());
@@ -64,11 +65,25 @@ public class MainActivity extends AppCompatActivity {
     private List<Category> getListCategory(){
         List<Category> listCategory = new ArrayList<>();
         List<uudai> listUuDai = new ArrayList<>();
-        listUuDai.add(new uudai(R.drawable.ic_baseline_motorcycle, "Lương về rồi mình làm gì"));
-        listUuDai.add(new uudai(R.drawable.ic_baseline_motorcycle, "Lương về rồi mình làm gì"));
-        listUuDai.add(new uudai(R.drawable.ic_baseline_motorcycle, "Lương về rồi mình làm gì"));
-        listUuDai.add(new uudai(R.drawable.ic_baseline_motorcycle, "Lương về rồi mình làm gì"));
-        listCategory.add(new Category("Ưu đãi đặc biệt", listUuDai));
+        List<uudai> listUuDai1 = new ArrayList<>();
+        listUuDai.add(new uudai(R.drawable.anh3, "Ghé Nhà Càng Nhiều, Hoàn Tiền Càng Cao\n" +
+                "    Giờ đây mỗi lần trải nghiệm tại Nhà của bạn đều có cơ hội được hoàn tiền ngay, lên đến..."));
+        listUuDai.add(new uudai(R.drawable.anh5, "Lương về rồi mìLương về rồi,mình làm gì ta?Tay phải chiếc bánh, tay trái ly nước yêu thích."));
+        listUuDai.add(new uudai(R.drawable.anh6, "Loạt Deal Xịn Sò Cập Bến Nhà, Đổi Ngay Thôi." +
+                "Ngày Hội Đổi BEAN lớn nhất năm" +
+                "Deal siêu xịn xò vẫy gọi, đổi..... "));
+        listUuDai.add(new uudai(R.drawable.anh7, "Mua 3 Tặng 1 - Mời Nhóm Mình Chung Vui" +
+                "Chỉ cần nhập mã CunguVui qua app, Nhà mời ngay ưu đãi mua 3 tặng 1....."));
+        listUuDai1.add(new uudai(R.drawable.anh8, "Ghé Nhà Càng Nhiều, Hoàn Tiền Càng Cao\n" +
+                "    Giờ đây mỗi lần trải nghiệm tại Nhà của bạn đều có cơ hội được hoàn tiền ngay, lên đến..."));
+        listUuDai1.add(new uudai(R.drawable.anh9, "Lương về rồi mìLương về rồi,mình làm gì ta?Tay phải chiếc bánh, tay trái ly nước yêu thích."));
+        listUuDai1.add(new uudai(R.drawable.anh10, "Loạt Deal Xịn Sò Cập Bến Nhà, Đổi Ngay Thôi." +
+                "Ngày Hội Đổi BEAN lớn nhất năm" +
+                "Deal siêu xịn xò vẫy gọi, đổi..... "));
+        listUuDai1.add(new uudai(R.drawable.anh11, "Mua 3 Tặng 1 - Mời Nhóm Mình Chung Vui" +
+                "Chỉ cần nhập mã CunguVui qua app, Nhà mời ngay ưu đãi mua 3 tặng 1....."));
+        listCategory.add(new Category("Ưu Đãi Đặc Biệt", listUuDai));
+        listCategory.add(new Category("Cập Nhập Từ Nhà", listUuDai1));
         listCategory.add(new Category("Ưu đãi đặc biệt", listUuDai));
         return listCategory;
     }

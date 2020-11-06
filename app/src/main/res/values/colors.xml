@@ -6,4 +6,7 @@
     <color name="white">#F9FFFE</color>
     <color name="dark">#020202</color>
     <color name="bgchild">#A3EFEFED</color>
+    <color name="bguudai">#F8F6F6</color>
+    <color name="tv_color">#D7121211</color>
+    <color name="bg_btn">#EAEAE7</color>
 </resources>
