@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F1EFF3</color>
+    <color name="colorPrimaryDark">#2020BD</color>
+    <color name="colorAccent">#3C3F41</color>
+    <color name="white">#F9FFFE</color>
+    <color name="dark">#020202</color>
+    <color name="bgchild">#A3EFEFED</color>
+</resources>

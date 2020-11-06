@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Baithi</string>
+    <string name="dathang">Đặt Hàng</string>
+    <string name="t_ch_i_m">Tích Điểm</string>
+    <string name="coupon">Coupon</string>
+    <string name="rewards">Rewards</string>
+</resources>

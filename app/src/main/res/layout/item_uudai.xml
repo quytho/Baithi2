@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_uudai"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cou"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_uudai"
+            android:textSize="12sp"
+            android:padding="6dp"
+            android:text="ưu dai 1"
+            />
+        <Button
+            android:id="@+id/btn_uudai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order ngay"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
