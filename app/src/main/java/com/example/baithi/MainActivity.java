@@ -4,24 +4,27 @@ package com.example.baithi;
         import androidx.appcompat.app.AppCompatActivity;
         import androidx.recyclerview.widget.LinearLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
+        import androidx.viewpager.widget.ViewPager;
 
         import android.content.Intent;
         import android.os.Bundle;
         import android.view.MenuItem;
+        import android.widget.ImageView;
+        import android.widget.ViewFlipper;
 
         import com.google.android.material.bottomnavigation.BottomNavigationView;
 
         import java.util.ArrayList;
         import java.util.List;
-
         import Category.Category;
         import Category.CategoryAdapter;
         import uudai.uudai;
 
 public class MainActivity extends AppCompatActivity {
-
+    private ViewPager viewPager;
     private RecyclerView rcvCategory;
     private CategoryAdapter categoryAdapter;
+    ViewFlipper viewFlipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+         int image[] = {R.drawable.thucan1,R.drawable.thucuong1, R.drawable.thucan4, R.drawable.thucuong6};
+         viewFlipper = findViewById(R.id.viewplipper);
+        for (int images: image) {
+            flipperImages(images);
+        }
+
         rcvCategory = findViewById(R.id.rcv_category);
         categoryAdapter = new CategoryAdapter(this );
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
@@ -62,10 +72,24 @@ public class MainActivity extends AppCompatActivity {
         categoryAdapter.setData(getListCategory());
         rcvCategory.setAdapter(categoryAdapter);
     }
+    public void flipperImages(int image){
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setAutoStart(true);
+        viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
+         viewFlipper.setInAnimation(this, android.R.anim.slide_out_right);
+
+    }
+
     private List<Category> getListCategory(){
         List<Category> listCategory = new ArrayList<>();
         List<uudai> listUuDai = new ArrayList<>();
         List<uudai> listUuDai1 = new ArrayList<>();
+        List<uudai> listUuDai2 = new ArrayList<>();
+        List<uudai> listUuDai3 = new ArrayList<>();
         listUuDai.add(new uudai(R.drawable.anh3, "Ghé Nhà Càng Nhiều, Hoàn Tiền Càng Cao\n" +
                 "    Giờ đây mỗi lần trải nghiệm tại Nhà của bạn đều có cơ hội được hoàn tiền ngay, lên đến..."));
         listUuDai.add(new uudai(R.drawable.anh5, "Lương về rồi mìLương về rồi,mình làm gì ta?Tay phải chiếc bánh, tay trái ly nước yêu thích."));
@@ -82,9 +106,17 @@ public class MainActivity extends AppCompatActivity {
                 "Deal siêu xịn xò vẫy gọi, đổi..... "));
         listUuDai1.add(new uudai(R.drawable.anh11, "Mua 3 Tặng 1 - Mời Nhóm Mình Chung Vui" +
                 "Chỉ cần nhập mã CunguVui qua app, Nhà mời ngay ưu đãi mua 3 tặng 1....."));
+        listUuDai2.add(new uudai(R.drawable.anh12, "Ghé Nhà Càng Nhiều, Hoàn Tiền Càng Cao\n" +
+                "    Giờ đây mỗi lần trải nghiệm tại Nhà của bạn đều có cơ hội được hoàn tiền ngay, lên đến..."));
+        listUuDai2.add(new uudai(R.drawable.anh13, "Lương về rồi mìLương về rồi,mình làm gì ta?Tay phải chiếc bánh, tay trái ly nước yêu thích."));
+        listUuDai2.add(new uudai(R.drawable.anh14, "Loạt Deal Xịn Sò Cập Bến Nhà, Đổi Ngay Thôi." +
+                "Ngày Hội Đổi BEAN lớn nhất năm" +
+                "Deal siêu xịn xò vẫy gọi, đổi..... "));
+        listUuDai2.add(new uudai(R.drawable.anh15, "Mua 3 Tặng 1 - Mời Nhóm Mình Chung Vui" +
+                "Chỉ cần nhập mã CunguVui qua app, Nhà mời ngay ưu đãi mua 3 tặng 1....."));
         listCategory.add(new Category("Ưu Đãi Đặc Biệt", listUuDai));
         listCategory.add(new Category("Cập Nhập Từ Nhà", listUuDai1));
-        listCategory.add(new Category("Ưu đãi đặc biệt", listUuDai));
+        listCategory.add(new Category("CoffeeLover", listUuDai2));
         return listCategory;
     }
 }

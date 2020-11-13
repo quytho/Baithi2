@@ -56,4 +56,7 @@ public class DBManager extends SQLiteOpenHelper  {
 
         db.close();
     }
+    public SQLiteDatabase open(){
+        return this.getWritableDatabase();
+    }
 }

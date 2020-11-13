@@ -4,159 +4,255 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:id="@+id/llheader"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_chinh">
+    >
+<ScrollView
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rl_parent"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:orientation="horizontal"
-        android:background="#E5EDED">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/damcuoi1" />
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:id="@+id/llheader"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/damcuoi1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quý Thọ"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="13dp"
+                android:textColor="@color/dark"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tài Khoản Mới"
+                android:layout_marginLeft="-55dp"
+                android:layout_marginTop="45dp"
+                android:textColor="@color/dark"
+                android:textStyle="bold"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="150dp"
+                android:src="@drawable/thonbao" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/rl_auto"
+            android:layout_below="@+id/llheader"
+
+
+            >
+            <ViewFlipper
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/viewplipper">
+
+            </ViewFlipper>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_llheaderchild"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quý Thọ"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="13dp"
-            android:textColor="@color/dark"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tài Khoản Mới"
-            android:layout_marginLeft="-55dp"
-            android:layout_marginTop="45dp"
-            android:textColor="@color/dark"
-            android:textStyle="bold"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="150dp"
-            android:src="@drawable/thonbao" />
-    </LinearLayout>
+            android:layout_marginTop="5dp"
+            android:background="#C1C1BC"
+            android:layout_below="@+id/rl_auto"
+            >
+            <LinearLayout
+                android:id="@+id/llheaderchild"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:background="#FFFFFF"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/lldathang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_baseline_motorcycle"
+                        >
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dathang"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lltichdiem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/tichdiem"
+                        >
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/t_ch_i_m"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llcoupon"
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cou"
+                        >
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/coupon"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/rewards"
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/reward"
+                        >
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rewards"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rl_cw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llheaderchild"
 
-     <RelativeLayout
-         android:id="@+id/rl_llheaderchild"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="5dp"
-         android:background="@color/bgchild"
-         android:layout_below="@+id/llheader"
-         >
-         <LinearLayout
-             android:id="@+id/llheaderchild"
-             android:layout_width="match_parent"
-             android:layout_height="110dp"
-             android:gravity="center"
-             android:orientation="horizontal">
-             <LinearLayout
-                 android:id="@+id/lldathang"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="vertical">
-                 <ImageView
-                     android:layout_width="50dp"
-                     android:layout_height="50dp"
-                     android:src="@drawable/ic_baseline_motorcycle"
-                     >
-                 </ImageView>
-                 <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="@string/dathang"
-                     />
-             </LinearLayout>
-             <LinearLayout
-                 android:id="@+id/lltichdiem"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_marginLeft="25dp"
-                 android:orientation="vertical">
-                 <ImageView
-                     android:layout_width="50dp"
-                     android:layout_height="50dp"
-                     android:src="@drawable/tichdiem"
-                     >
-                 </ImageView>
-                 <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="@string/t_ch_i_m"
-                     />
-             </LinearLayout>
-             <LinearLayout
-                 android:id="@+id/llcoupon"
-                 android:layout_marginLeft="25dp"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="vertical">
-                 <ImageView
-                     android:layout_width="50dp"
-                     android:layout_height="50dp"
-                     android:src="@drawable/cou"
-                     >
-                 </ImageView>
-                 <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="@string/coupon"
-                     />
-             </LinearLayout>
-             <LinearLayout
-                 android:id="@+id/rewards"
-                 android:layout_marginLeft="25dp"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:orientation="vertical">
-                 <ImageView
-                     android:layout_width="50dp"
-                     android:layout_height="50dp"
-                     android:src="@drawable/reward"
-                     >
-                 </ImageView>
-                 <TextView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="@string/rewards"
-                     />
-             </LinearLayout>
-         </LinearLayout>
-     </RelativeLayout>
-     <RelativeLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/rl_llheaderchild"
+                >
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rcv_category"
+                    />
 
-         >
-         <androidx.recyclerview.widget.RecyclerView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:id="@+id/rcv_category"
-             />
-     </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/tennhac"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_cw"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nhạc đang phát tại Nhà">
 
+                </TextView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                        android:background="#FFFFFF"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/tennhac"
+                         android:id="@+id/rl_nhac"
+                         >
+
+                         <de.hdodenhof.circleimageview.CircleImageView
+                             android:layout_alignParentLeft="true"
+                             android:layout_alignParentTop="true"
+                             android:layout_centerInParent="true"
+                             android:id="@+id/img_nhac"
+                             android:layout_width="76dp"
+                             android:layout_height="76dp"
+
+                             android:layout_marginTop="45dp"
+                             android:src="@drawable/logo01"
+                             app:civ_border_color="#FF000000"
+                             app:civ_border_width="2dp" />
+
+                         <RelativeLayout
+                             android:layout_alignParentLeft="true"
+                             android:id="@+id/ll_nhac"
+                             android:layout_marginLeft="85dp"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+
+                             android:layout_centerInParent="true"
+                             >
+                             <TextView
+                                 android:id="@+id/tv_nhac1"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:text="Đang Cập Nhật - Getup"
+                                 android:textSize="17sp"
+                                 android:textStyle="bold"
+                                 />
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="30dp"
+                                 android:text="Now phaying"
+                                 android:textSize="17sp" />
+                         </RelativeLayout>
+                     </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/rl_nav"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigation"
-        app:itemBackground="@color/colorPrimaryDark"
+        app:itemBackground="@color/white"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
-        android:layout_alignParentBottom="true"
-        >
-
+        app:menu="@menu/menu_navigation">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
+</RelativeLayout>
 </RelativeLayout>
