@@ -9,7 +9,7 @@
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bgchild"
+        android:background="@color/colorWhite"
         app:tabMode="fixed"
         app:tabGravity="fill"
         app:tabIndicatorColor="#FFC107"
@@ -18,23 +18,12 @@
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/viewpager_id"
         android:layout_below="@+id/tablayout_id">
 
     </androidx.viewpager.widget.ViewPager>
 
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Order"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-
-        />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
 

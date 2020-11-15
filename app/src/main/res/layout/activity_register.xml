@@ -62,7 +62,7 @@
                 android:weightSum="4">
 
                 <EditText
-                    android:id="@+id/username"
+                    android:id="@+id/usernameđk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

@@ -12,25 +12,42 @@ import java.util.List;
 public class ViewPaperAdapter extends FragmentPagerAdapter {
     private final List<Fragment> lstFragment = new ArrayList<>();
     private final List<String> lstTitle = new ArrayList<>();
-
-    public ViewPaperAdapter(FragmentManager fm) {
-        super(fm);
+    public ViewPaperAdapter(@Nullable FragmentManager fm, int behavior){
+        super(fm, behavior);
     }
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return lstFragment.get(position);
+        switch (position){
+            case 0:
+                return new Fragement_douong();
+            case 1:
+                return new Fragment_doan();
+            default:
+                return new Fragement_douong();
+        }
+
     }
 
     @Override
     public int getCount() {
-        return lstTitle.size();
+        return 2;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return lstTitle.get(position);
+        String title ="";
+        switch (position){
+            case 0:
+                title = "Đồ Uống";
+                break;
+            case 1:
+                title = "Đồ Ăn";
+                break;
+        }
+        return title;
 
     }
     public void AddFragment(Fragment fragment, String title){

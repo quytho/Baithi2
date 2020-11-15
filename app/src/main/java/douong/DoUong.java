@@ -5,15 +5,15 @@ public class DoUong {
     private String Gia;
     private int Photo;
 
-    public DoUong(String name, String gia, int photo) {
+    public DoUong(int photo, String name, String gia ) {
         Name = name;
         Gia = gia;
         Photo = photo;
+
     }
 
     public DoUong() {
     }
-
     public String getName() {
         return Name;
     }
