@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import douong.DoUong;
-import douong.doUongAdapter;
 
 public class Fragement_douong extends Fragment{
     RecyclerView recyclerView;
     View view;
+    private List<DoUong> lstDoUong;
     public Fragement_douong(){
 
     }
@@ -27,28 +27,33 @@ public class Fragement_douong extends Fragment{
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.thucuong_fragment, container, false);
         recyclerView = view.findViewById(R.id.thucuong_recyclerView);
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(getContext(),lstDoUong);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(recycleViewAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        doUongAdapter doUongAdapter = new doUongAdapter();
-        doUongAdapter.setData(getListDoUong());
-
-        recyclerView.setAdapter(doUongAdapter);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//
+//        doUongAdapter doUongAdapter = new doUongAdapter();
+//        doUongAdapter.setData(getListDoUong());
+//
+//        recyclerView.setAdapter(doUongAdapter);
         return view;
     }
-    private List<DoUong> getListDoUong(){
-        List<DoUong> list = new ArrayList<>();
-        list.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
-        list.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
-        return  list;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        lstDoUong = new ArrayList<>();
+        lstDoUong.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
+        lstDoUong.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
+        lstDoUong.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
+        lstDoUong.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
+        lstDoUong.add(new DoUong(R.drawable.thucuong1, "cafe", "32.000VND"));
+        lstDoUong.add(new DoUong(R.drawable.thucuong2, "cafe", "32.000VND"));
+
+
     }
+
+
 
 }

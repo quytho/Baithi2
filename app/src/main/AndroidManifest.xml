@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.baithi">
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +18,19 @@
         <activity android:name=".myaccount" />
         <activity android:name=".notification"></activity>
         <activity android:name=".order" />
+        <activity android:name=".tichdiem" />
+        <activity android:name=".Coupon" />
+        <activity android:name=".thongtinaccount" />
+        <activity android:name=".lichsudonhang" />
+        <activity android:name=".thanhvien" />
+        <activity android:name=".thongtinthongbao" />
+        <activity android:name=".nhacdangphat"/>
+        <activity android:name=".quidinh"/>
+        <activity android:name=".caidat"/>
         <activity android:name="Login.RegisterActivity"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/key_api"/>
         <activity android:name="Login.LoginActivity">
 
             <intent-filter>
@@ -22,6 +39,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CaptureAct"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
+
     </application>
 
 </manifest>

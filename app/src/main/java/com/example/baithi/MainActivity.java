@@ -1,35 +1,42 @@
 package com.example.baithi;
 
-        import androidx.annotation.NonNull;
-        import androidx.appcompat.app.AppCompatActivity;
-        import androidx.recyclerview.widget.LinearLayoutManager;
-        import androidx.recyclerview.widget.RecyclerView;
-        import androidx.viewpager.widget.ViewPager;
-
         import android.content.Intent;
-        import android.os.Bundle;
-        import android.view.MenuItem;
-        import android.widget.ImageView;
-        import android.widget.ViewFlipper;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ViewFlipper;
 
-        import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
-        import java.util.ArrayList;
-        import java.util.List;
-        import Category.Category;
-        import Category.CategoryAdapter;
-        import uudai.uudai;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+import Category.Category;
+import Category.CategoryAdapter;
+import uudai.uudai;
+
+public class MainActivity extends AppCompatActivity{
     private ViewPager viewPager;
     private RecyclerView rcvCategory;
     private CategoryAdapter categoryAdapter;
     ViewFlipper viewFlipper;
-
+    LinearLayout tichdiem ;
+    LinearLayout dathang ;
+    LinearLayout coupon ;
+    LinearLayout rewards ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -59,11 +66,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-         int image[] = {R.drawable.thucan1,R.drawable.thucuong1, R.drawable.thucan4, R.drawable.thucuong6};
-         viewFlipper = findViewById(R.id.viewplipper);
-        for (int images: image) {
-            flipperImages(images);
-        }
+        //chuyển trang thông báo
+        ImageView thongbao = (ImageView)findViewById(R.id.chuongthongbao);
+        thongbao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, thongtinthongbao.class);
+                startActivity(intent);
+            }
+
+
+
+        });
+//         int image[] = {R.drawable.thucan1,R.drawable.thucuong1, R.drawable.thucan4, R.drawable.thucuong6};
+//         viewFlipper = findViewById(R.id.viewplipper);
+//        for (int images: image) {
+//            flipperImages(images);
+//        }
 
         rcvCategory = findViewById(R.id.rcv_category);
         categoryAdapter = new CategoryAdapter(this );
@@ -71,7 +90,41 @@ public class MainActivity extends AppCompatActivity {
         rcvCategory.setLayoutManager(linearLayoutManager);
         categoryAdapter.setData(getListCategory());
         rcvCategory.setAdapter(categoryAdapter);
+
+         dathang = (LinearLayout)findViewById(R.id.lldathang);
+         coupon = (LinearLayout)findViewById(R.id.llcoupon);
+         rewards = (LinearLayout)findViewById(R.id.rewards);
+        tichdiem = (LinearLayout)findViewById(R.id.lltichdiem);
+
+        tichdiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, tichdiem.class);
+                startActivity(intent);
+            }
+
+        });
+
+        dathang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, order.class);
+                startActivity(intent);
+            }
+
+        });
+        coupon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Coupon.class);
+                startActivity(intent);
+            }
+
+        });
+
     }
+
+
     public void flipperImages(int image){
         ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(image);
@@ -120,3 +173,54 @@ public class MainActivity extends AppCompatActivity {
         return listCategory;
     }
 }
+//    @Override
+//    public void onClick(View v) {
+//        LinearLayout tichdiem = (LinearLayout)findViewById(R.id.lltichdiem);
+//        LinearLayout dathang = (LinearLayout)findViewById(R.id.lldathang);
+//        LinearLayout coupon = (LinearLayout)findViewById(R.id.llcoupon);
+//        LinearLayout rewards = (LinearLayout)findViewById(R.id.rewards);
+//        int id = v.getId();
+//        switch (id){
+//            case R.id.lltichdiem:
+//                tichdiem.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(MainActivity.this, tichdiem.class);
+//                        startActivity(intent);
+//                    }
+//
+//                });
+//                break;
+//            case R.id.lldathang:
+//                dathang.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(MainActivity.this, notification.class);
+//                        startActivity(intent);
+//                    }
+//
+//                });
+//                break;
+//
+//            case R.id.llcoupon:
+//                coupon.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(MainActivity.this, uudai.class);
+//                        startActivity(intent);
+//                    }
+//
+//                });
+//                break;
+//            case R.id.rewards:
+//                rewards.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(MainActivity.this, uudai.class);
+//                        startActivity(intent);
+//                    }
+//
+//                });
+//                break;
+//        }
+//    }

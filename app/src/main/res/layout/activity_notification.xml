@@ -6,16 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".notification">
+    <LinearLayout
+        android:id="@+id/ll_store"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+        <include
+            android:id="@+id/toobar2"
+            layout="@layout/toolbar3"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notifications"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rr_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_store">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:id="@+id/ll_location"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Spinner
 
-        />
+                android:layout_centerHorizontal="true"
+                android:id="@+id/spinner"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vienbandoi"/>
+            <fragment
+                android:id="@+id/ggmap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.google.android.gms.maps.MapFragment">
+            </fragment>
+            </LinearLayout>
+
+    </RelativeLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
 

@@ -34,7 +34,6 @@ public class Adapter extends ArrayAdapter<Contact> {
             viewHolder = new ViewHolder();
             viewHolder.tv_color = (ImageView) convertView.findViewById(R.id.ic_left);
             viewHolder.tv_name = (TextView) convertView.findViewById(R.id.tv_text);
-            viewHolder.tv_color2 = (ImageView) convertView.findViewById(R.id.ic_right);
             convertView.setTag(viewHolder);
         }
         else{
@@ -45,12 +44,11 @@ public class Adapter extends ArrayAdapter<Contact> {
 
         viewHolder.tv_color.setImageResource(contact.getmImage1());
         viewHolder.tv_name.setText(contact.getmName());
-        viewHolder.tv_color2.setImageResource(contact.getmImage2());
         return convertView;
     }
     public class ViewHolder {
         ImageView tv_color;
         TextView tv_name;
-        ImageView tv_color2;
+
     }
 }

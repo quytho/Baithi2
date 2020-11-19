@@ -9,4 +9,14 @@
     <string name="forgot">Forgot Your Password? <u>Tap Here</u></string>
     <string name="dnt_have">Don\'t Have an account?</string>
     <string name="alrdy_have">Already have an account?</string>
+    <string name="thanhtoan">Đưa mã này cho nhân viên khi thanh toán.</string>
+    <string name="uudai1">Ưu đãi 25% khi đặt Pick Up(tự đến lấy) từ...
+
+    Hạn sử dụng đến ngày 30/11/2020</string>
+    <string name="uudai2">-Ưu đãi giảm 30.000đ cho đơn hàng từ 149.000đ...
+    Hạn sử dụng đến ngày 30/11/2020</string>
+    <string name="han">Hạn sử dụng đến ngày 30/11/2020</string>
+    <string name="key_api">AIzaSyA9JaQn0qzZ9wBJ0zpoewSQeF3n9fWykCs</string>
+    <string name="noiqui1">Điểm nhận hàng không quá 5km so với cửa hàng gần nhất, để đảm bảo chát lượng nước.
+    (*) Nếu khoảng cách xa hơn thì phải có sự đồng ý của khách khi xác nhận đơn hàng.</string>
 </resources>

@@ -9,9 +9,6 @@
     >
 <ScrollView
     android:id="@+id/scrollView"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
@@ -26,66 +23,84 @@
             android:layout_height="75dp"
             android:orientation="horizontal"
             android:background="#FFFFFF">
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
                 android:src="@drawable/damcuoi1" />
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:id="@+id/img_nhac"-->
+<!--                android:layout_width="76dp"-->
+<!--                android:layout_height="76dp"-->
+
+<!--                android:layout_marginTop="45dp"-->
+<!--                android:src="@drawable/logo01"-->
+<!--                app:civ_border_color="#FF000000"-->
+<!--                app:civ_border_width="2dp" />-->
+
             <TextView
+                android:fontFamily="sans-serif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quý Thọ"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/dark"
                 android:textStyle="bold"/>
             <TextView
+                android:fontFamily="sans-serif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tài Khoản Mới"
                 android:layout_marginLeft="-55dp"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="41dp"
                 android:textColor="@color/dark"
-                android:textStyle="bold"/>
+                />
+
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="150dp"
-                android:src="@drawable/thonbao" />
+                android:id="@+id/chuongthongbao"
+                android:layout_width="16dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="155dp"
+                android:src="@drawable/chuong" />
         </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/rl_auto"
-            android:layout_below="@+id/llheader"
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:id="@+id/rl_auto"-->
+<!--            android:layout_below="@+id/llheader"-->
 
 
-            >
-            <ViewFlipper
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/viewplipper">
+<!--            >-->
+<!--            <ViewFlipper-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:id="@+id/viewplipper">-->
 
-            </ViewFlipper>
-        </RelativeLayout>
+<!--            </ViewFlipper>-->
+<!--        </RelativeLayout>-->
 
         <RelativeLayout
             android:id="@+id/rl_llheaderchild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="#C1C1BC"
-            android:layout_below="@+id/rl_auto"
+            android:background="@color/bg_chinh"
+            android:layout_below="@+id/llheader"
             >
             <LinearLayout
                 android:id="@+id/llheaderchild"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="100dp"
                 android:gravity="center"
                 android:background="#FFFFFF"
                 android:orientation="horizontal">
@@ -97,10 +112,14 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_baseline_motorcycle"
+                        android:src="@drawable/order1"
                         >
                     </ImageView>
                     <TextView
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="3dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/dathang"
@@ -115,10 +134,14 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/tichdiem"
+                        android:src="@drawable/tichdiem1"
                         >
                     </ImageView>
                     <TextView
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="3dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/t_ch_i_m"
@@ -133,10 +156,14 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/cou"
+                        android:src="@drawable/voucher1"
                         >
                     </ImageView>
                     <TextView
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="3dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/coupon"
@@ -151,10 +178,14 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/reward"
+                        android:src="@drawable/reward1"
                         >
                     </ImageView>
                     <TextView
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginTop="3dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/rewards"
@@ -180,63 +211,72 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_below="@+id/rl_cw"
                 >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nhạc đang phát tại Nhà">
+                    android:text="">
 
                 </TextView>
 
             </RelativeLayout>
-            <RelativeLayout
-                        android:background="#FFFFFF"
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-                         android:layout_below="@+id/tennhac"
-                         android:id="@+id/rl_nhac"
-                         >
+<!--            <RelativeLayout-->
+<!--                        android:layout_marginLeft="20dp"-->
+<!--                        android:layout_marginRight="20dp"-->
+<!--                        android:background="#FFFFFF"-->
+<!--                         android:layout_width="match_parent"-->
+<!--                         android:layout_height="wrap_content"-->
+<!--                         android:layout_below="@+id/tennhac"-->
+<!--                         android:id="@+id/rl_nhac"-->
+<!--                         >-->
 
-                         <de.hdodenhof.circleimageview.CircleImageView
-                             android:layout_alignParentLeft="true"
-                             android:layout_alignParentTop="true"
-                             android:layout_centerInParent="true"
-                             android:id="@+id/img_nhac"
-                             android:layout_width="76dp"
-                             android:layout_height="76dp"
+<!--                         <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                             android:layout_alignParentLeft="true"-->
+<!--                             android:layout_alignParentTop="true"-->
+<!--                             android:layout_centerInParent="true"-->
+<!--                             android:id="@+id/img_nhac"-->
+<!--                             android:layout_width="76dp"-->
+<!--                             android:layout_height="76dp"-->
 
-                             android:layout_marginTop="45dp"
-                             android:src="@drawable/logo01"
-                             app:civ_border_color="#FF000000"
-                             app:civ_border_width="2dp" />
+<!--                             android:layout_marginTop="45dp"-->
+<!--                             android:src="@drawable/logo01"-->
+<!--                             app:civ_border_color="#FF000000"-->
+<!--                             app:civ_border_width="2dp" />-->
 
-                         <RelativeLayout
-                             android:layout_alignParentLeft="true"
-                             android:id="@+id/ll_nhac"
-                             android:layout_marginLeft="85dp"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
+<!--                         <RelativeLayout-->
+<!--                             android:layout_alignParentLeft="true"-->
+<!--                             android:id="@+id/ll_nhac"-->
+<!--                             android:layout_marginLeft="85dp"-->
+<!--                             android:layout_width="match_parent"-->
+<!--                             android:layout_height="wrap_content"-->
 
-                             android:layout_centerInParent="true"
-                             >
-                             <TextView
-                                 android:id="@+id/tv_nhac1"
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:text="Đang Cập Nhật - Getup"
-                                 android:textSize="17sp"
-                                 android:textStyle="bold"
-                                 />
-                             <TextView
-                                 android:layout_width="match_parent"
-                                 android:layout_height="wrap_content"
-                                 android:layout_marginTop="30dp"
-                                 android:text="Now phaying"
-                                 android:textSize="17sp" />
-                         </RelativeLayout>
-                     </RelativeLayout>
+<!--                             android:layout_centerInParent="true"-->
+<!--                             >-->
+<!--                             <TextView-->
+<!--                                 android:id="@+id/tv_nhac1"-->
+<!--                                 android:layout_width="match_parent"-->
+<!--                                 android:layout_height="wrap_content"-->
+<!--                                 android:text="Đang Cập Nhật - Getup"-->
+<!--                                 android:textSize="17sp"-->
+<!--                                 android:textStyle="bold"-->
+<!--                                 />-->
+<!--                             <TextView-->
+<!--                                 android:layout_width="match_parent"-->
+<!--                                 android:layout_height="wrap_content"-->
+<!--                                 android:layout_marginTop="30dp"-->
+<!--                                 android:text="Now phaying"-->
+<!--                                 android:textSize="17sp" />-->
+<!--                         </RelativeLayout>-->
+<!--            </RelativeLayout>-->
+<!--            <RelativeLayout-->
+<!--                android:background="@color/bg_chinh"-->
+<!--                android:layout_below="@+id/r"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp">-->
+
+<!--            </RelativeLayout>-->
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

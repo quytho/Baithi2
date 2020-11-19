@@ -16,22 +16,24 @@ public class DBManager   {
         Log.d(TAG, "DBManager: thanhcong");
     }
 
-    public long addAccount(Account account){
+    public void addAccount(Account account) {
         ContentValues values = new ContentValues();
         values.put(CreateDatabase.NAME, account.getName());
 
         values.put(CreateDatabase.EMAIL, account.getEmail());
         values.put(CreateDatabase.PASS, account.getPass());
 
-        database.insert(CreateDatabase.TABLE_NAME,null,values);
-        long kiemtra = database.insert(CreateDatabase.TABLE_NAME,null,values);
-        return kiemtra;
+        database.insert(CreateDatabase.TABLE_NAME, null, values);
+        database.close();
     }
+//        long kiemtra = database.insert(CreateDatabase.TABLE_NAME,null,values);
+//        return kiemtra;
+
 
 
     public boolean KiemTraDangNhap(String ten, String matkhau){
-        String truyvan = "SELECT * FORM " + CreateDatabase.TABLE_NAME + " WHERE " + CreateDatabase.EMAIL + " = '" + ten
-                + "' AND '" + CreateDatabase.PASS + "' = '" + matkhau +"'";
+        String truyvan = "SELECT * FROM " + CreateDatabase.TABLE_NAME + " WHERE " + CreateDatabase.EMAIL + " = '" + ten
+                + "' AND " + CreateDatabase.PASS + " = '" + matkhau +"'";
 
         Cursor cursor = database.rawQuery(truyvan, null);
         if (cursor.getCount() !=0 ){

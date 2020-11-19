@@ -8,9 +8,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.baithi.MainActivity;
 import com.example.baithi.R;
-import com.example.baithi.myaccount;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -24,9 +22,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         dbManager = new DBManager(this);
-        edEmail = (EditText)findViewById(R.id.usernameđk);
-        edName = (EditText)findViewById(R.id.dk_password);
-        edPass = (EditText)findViewById(R.id.dk_email);
+        edEmail = (EditText)findViewById(R.id.dk_email);
+        edName = (EditText)findViewById(R.id.usernameđk);
+        edPass = (EditText)findViewById(R.id.dk_password);
         btndk = (ImageView)findViewById(R.id.btn_login1);
         ImageView imageView = (ImageView)findViewById(R.id.log_btn);
 //        imageView.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
         String name = edName.getText().toString();
         String mail = edEmail.getText().toString();
         String pass = edPass.getText().toString();
-        Account account = new Account(name, mail,pass);
+        Account account = new Account(name, mail ,pass);
         return account;
     }
 }

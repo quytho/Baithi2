@@ -18,22 +18,44 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dbManager = new DBManager(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ImageView imageView1 = (ImageView)findViewById(R.id.btn_login);
-        ImageView imageView = (ImageView)findViewById(R.id.reg_btn);
-//        imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        ImageView imageView1 = (ImageView) findViewById(R.id.btn_login);
+        ImageView imageView = (ImageView) findViewById(R.id.reg_btn);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
 
+        });
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edName = (EditText) findViewById(R.id.email);
+                edPass = (EditText) findViewById(R.id.password);
+                ImageView imageView1 = (ImageView) findViewById(R.id.btn_login);
+                String tenDN = edName.getText().toString();
+                String pass = edPass.getText().toString();
 
-         dbManager = new DBManager(this);
-        edName = (EditText) findViewById(R.id.email);
-        edPass = (EditText) findViewById(R.id.password);
+                boolean kt = dbManager.KiemTraDangNhap(tenDN, pass);
+                if (kt) {
+//                    Toast.makeText(LoginActivity.this, "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
+                    imageView1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                } else {
+                    Toast.makeText(LoginActivity.this, "Đăng Nhập Thất Bại", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
     public void btnDangNhat(){
         ImageView imageView = (ImageView)findViewById(R.id.btn_login);
@@ -68,15 +90,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();
-        switch (id){
-            case R.id.btn_login:
-                btnDangNhat();
-                break;
-            case R.id.reg_btn:
-                btnDangKi();
-                break;
-        }
+//        int id = v.getId();
+//        switch (id){
+//            case R.id.btn_login:
+//                break;
+//            case R.id.reg_btn:
+//                btnDangKi();
+//                break;
+//        }
     }
 }
 

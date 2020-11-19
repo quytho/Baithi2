@@ -8,42 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".myaccount">
 
-
-<!--    <LinearLayout-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:background="#FFFFFF"-->
-<!--        android:id="@+id/ll_anh"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="160dp"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:orientation="vertical">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:text="Tôi"-->
-<!--            android:textColor="#FF000000"-->
-<!--            android:textSize="15sp"-->
-<!--            android:textStyle="normal" />-->
-
-<!--        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--            android:layout_width="76dp"-->
-<!--            android:layout_height="76dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:src="@drawable/logo01"-->
-<!--            app:civ_border_color="#FF000000"-->
-<!--            app:civ_border_width="2dp" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:text="Võ Nguyên"-->
-<!--            android:textColor="#FF000000"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="normal" />-->
-<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_marginBottom="10dp"
         android:id="@+id/llheader"
@@ -51,36 +15,47 @@
         android:layout_height="75dp"
         android:orientation="horizontal"
         android:background="#FFFFFF">
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
             android:src="@drawable/damcuoi1" />
+<!--        <ImageView-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:src="@drawable/damcuoi1" />-->
         <TextView
+            android:fontFamily="sans-serif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quý Thọ"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
             android:textColor="@color/dark"
             android:textStyle="bold"/>
         <TextView
+            android:fontFamily="sans-serif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tài Khoản Mới"
+            android:text="Khách hàng mới"
             android:layout_marginLeft="-55dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="41dp"
             android:textColor="@color/dark"
-            android:textStyle="bold"/>
+            />
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="145dp"
-            android:src="@drawable/tien" />
+            android:src="@drawable/coin" />
     </LinearLayout>
     <RelativeLayout
         android:background="#FFFFFF"
@@ -93,7 +68,7 @@
             android:descendantFocusability="blocksDescendants"
             android:id="@+id/lv_profile"
             android:layout_width="match_parent"
-            android:layout_height="350dp" />
+            android:layout_height="wrap_content" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_marginTop="10dp"
@@ -104,12 +79,13 @@
         <Button
 
             android:id="@+id/btn_logout"
+
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Đăng Xuất"
-            android:textColor="#f22121"
+            android:textColor="#FF000000"
             android:background="@drawable/vienbutton"/>
     </RelativeLayout>
 

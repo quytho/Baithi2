@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/ic_baseline_home"/>
+        android:title="Tin Tức"
+        android:icon="@drawable/news"/>
     <item
         android:id="@+id/order"
-        android:title="Order"
-        android:icon="@drawable/ic_baseline_home"/>
+        android:title="Đặt Hàng"
+        android:icon="@drawable/order2"/>
     <item
         android:id="@+id/notification"
-        android:title="Notification"
-        android:icon="@drawable/ic_baseline_notifications"/>
+        android:title="Cửa Hàng"
+        android:icon="@drawable/home3"/>
     <item
         android:id="@+id/myaccount"
-        android:title="MyAccount"
-        android:icon="@drawable/ic_baseline_account"/>
+        android:title="Tài Khoản"
+        android:icon="@drawable/user1"/>
 </menu>
